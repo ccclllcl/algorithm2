@@ -1,0 +1,8 @@
+预处理指令:g++ -E source.cpp -o preprocessed.i
+编译指令:g++ -S source.cpp -o assemble.s
+汇编指令:g++ -c source.cpp -o output.o
+链接指令:g++ output.o -o executable.exe
+
+
+直接从源文件.cpp到可执行文件.exe
+g++ source.cpp -o name.exe

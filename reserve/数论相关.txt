@@ -1,0 +1,31 @@
+互素数(a,b),不能表示为sa+tb(s>=0,t>=0)的最大正整数为ab-a-b,一共有(a-1)*(b-1)/2个不能表达的正整数;
+
+互素数不能表出的最大数
+n个数a1,a2,...an  gcd(a1,a2...,an)=1  则最大的不能由a1*x1+a2*x2+...a3*x3(x1,x2...xn>=0)表示的数不超过max(ai*aj),(i!=j)
+https://blog.csdn.net/wdq347/article/details/9313699
+
+inline bool check(ll x)
+{
+    ///检查平方数
+    ll y = pow(x, 0.5);
+    if(y * y == x || (y + 1) * (y + 1) == x)
+        return true;
+    ///检查立方数
+    y = pow(x, 1.0 / 3);
+    if(y * y * y == x || (y + 1) * (y + 1) * (y + 1) == x || (y + 2) * (y + 2) * (y + 2) == x)
+        return true;
+    return false;
+}
+
+求逆元函数:
+LL inv(const LL& x, const LL& y) {
+    assert(x != 0);
+    LL u = 0, v = 1, a = x, m = y, t;
+    while (a != 0) {
+        t = m / a;
+        swap(a, m -= t * a);
+        swap(u -= t * v, v);
+    }
+    assert(m == 1);
+    return u;
+}
