@@ -3,7 +3,7 @@
 const LL inf=1e9;
 using namespace std;
 const int N=2e5+5;
-LL mod=998244353;
+LL Mod=998244353;
 LL n;
 string intToBinary(int n){
     string s;

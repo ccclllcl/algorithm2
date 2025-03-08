@@ -11,7 +11,7 @@
 #include<stdio.h>
 #include<string>
 typedef long long LL;
-LL mod=1e9+7;
+LL Mod= 1e9 + 7;
 using namespace std;
 int main(){
     int n;

@@ -22,7 +22,7 @@ void InitStack(SqStack &S);
 void Push(SqStack &S,int x);
 int main()
 {
-    freopen("in","y",stdin);
+    freopen("in","Y",stdin);
     freopen("out.txt","w",stdout);
     SqStack S;
     int val=0,i=0,j=0,tag=1,m,n,x=0,y=0,tag1=0;

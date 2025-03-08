@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
+//x*res%y==1
 template <typename T>
 T inv(const T& x, const T& y) {
     assert(x != 0);
@@ -9,6 +10,7 @@ T inv(const T& x, const T& y) {
         swap(a, m -= t * a);
         swap(u -= t * v, v);
     }
+    u=(u%y+y)%y;
     assert(m == 1);
     return u;
 }

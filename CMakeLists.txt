@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.25)
 project(algorithm2)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 add_executable(algorithm2 main.cpp)
-
+add_executable(GG GG.cpp)
 add_executable(Test Test.cpp)
 add_executable(P1 P1.cpp)
 add_executable(P1141 P1141.cpp)
@@ -31,3 +31,7 @@ add_executable(rand_gen rand_gen.cpp)
 add_executable(EEE EEE.cpp)
 add_executable(FFF FFF.cpp)
 add_executable(clear_in clear_in.cpp)
+add_executable(comp comp.cpp)
+
+
+add_executable(Main projects/Main.cpp)

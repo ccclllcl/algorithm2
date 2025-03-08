@@ -1,7 +1,0 @@
-1
-full
-1
-2
-3
-empty
-empty

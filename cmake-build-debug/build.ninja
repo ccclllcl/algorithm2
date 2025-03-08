@@ -51,9 +51,11 @@ build cmake_object_order_depends_target_algorithm2: phony || CMakeFiles/algorith
 
 build CMakeFiles/algorithm2.dir/main.cpp.obj: CXX_COMPILER__algorithm2_Debug F$:/algorithm2/main.cpp || cmake_object_order_depends_target_algorithm2
   DEP_FILE = CMakeFiles\algorithm2.dir\main.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\algorithm2.dir
   OBJECT_FILE_DIR = CMakeFiles\algorithm2.dir
+  TARGET_COMPILE_PDB = CMakeFiles\algorithm2.dir\
+  TARGET_PDB = algorithm2.pdb
 
 
 # =============================================================================
@@ -65,13 +67,52 @@ build CMakeFiles/algorithm2.dir/main.cpp.obj: CXX_COMPILER__algorithm2_Debug F$:
 
 build algorithm2.exe: CXX_EXECUTABLE_LINKER__algorithm2_Debug CMakeFiles/algorithm2.dir/main.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\algorithm2.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\algorithm2.dir\
   TARGET_FILE = algorithm2.exe
   TARGET_IMPLIB = libalgorithm2.dll.a
-  TARGET_PDB = algorithm2.exe.dbg
+  TARGET_PDB = algorithm2.pdb
+
+# =============================================================================
+# Object build statements for EXECUTABLE target GG
+
+
+#############################################
+# Order-only phony target for GG
+
+build cmake_object_order_depends_target_GG: phony || CMakeFiles/GG.dir
+
+build CMakeFiles/GG.dir/GG.cpp.obj: CXX_COMPILER__GG_Debug F$:/algorithm2/GG.cpp || cmake_object_order_depends_target_GG
+  DEP_FILE = CMakeFiles\GG.dir\GG.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  OBJECT_DIR = CMakeFiles\GG.dir
+  OBJECT_FILE_DIR = CMakeFiles\GG.dir
+  TARGET_COMPILE_PDB = CMakeFiles\GG.dir\
+  TARGET_PDB = GG.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target GG
+
+
+#############################################
+# Link the executable GG.exe
+
+build GG.exe: CXX_EXECUTABLE_LINKER__GG_Debug CMakeFiles/GG.dir/GG.cpp.obj
+  FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\GG.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\GG.dir\
+  TARGET_FILE = GG.exe
+  TARGET_IMPLIB = libGG.dll.a
+  TARGET_PDB = GG.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target Test
@@ -84,9 +125,11 @@ build cmake_object_order_depends_target_Test: phony || CMakeFiles/Test.dir
 
 build CMakeFiles/Test.dir/Test.cpp.obj: CXX_COMPILER__Test_Debug F$:/algorithm2/Test.cpp || cmake_object_order_depends_target_Test
   DEP_FILE = CMakeFiles\Test.dir\Test.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\Test.dir
   OBJECT_FILE_DIR = CMakeFiles\Test.dir
+  TARGET_COMPILE_PDB = CMakeFiles\Test.dir\
+  TARGET_PDB = Test.pdb
 
 
 # =============================================================================
@@ -98,13 +141,15 @@ build CMakeFiles/Test.dir/Test.cpp.obj: CXX_COMPILER__Test_Debug F$:/algorithm2/
 
 build Test.exe: CXX_EXECUTABLE_LINKER__Test_Debug CMakeFiles/Test.dir/Test.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Test.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\Test.dir\
   TARGET_FILE = Test.exe
   TARGET_IMPLIB = libTest.dll.a
-  TARGET_PDB = Test.exe.dbg
+  TARGET_PDB = Test.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target P1
@@ -117,9 +162,11 @@ build cmake_object_order_depends_target_P1: phony || CMakeFiles/P1.dir
 
 build CMakeFiles/P1.dir/P1.cpp.obj: CXX_COMPILER__P1_Debug F$:/algorithm2/P1.cpp || cmake_object_order_depends_target_P1
   DEP_FILE = CMakeFiles\P1.dir\P1.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\P1.dir
   OBJECT_FILE_DIR = CMakeFiles\P1.dir
+  TARGET_COMPILE_PDB = CMakeFiles\P1.dir\
+  TARGET_PDB = P1.pdb
 
 
 # =============================================================================
@@ -131,13 +178,15 @@ build CMakeFiles/P1.dir/P1.cpp.obj: CXX_COMPILER__P1_Debug F$:/algorithm2/P1.cpp
 
 build P1.exe: CXX_EXECUTABLE_LINKER__P1_Debug CMakeFiles/P1.dir/P1.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\P1.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\P1.dir\
   TARGET_FILE = P1.exe
   TARGET_IMPLIB = libP1.dll.a
-  TARGET_PDB = P1.exe.dbg
+  TARGET_PDB = P1.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target P1141
@@ -150,9 +199,11 @@ build cmake_object_order_depends_target_P1141: phony || CMakeFiles/P1141.dir
 
 build CMakeFiles/P1141.dir/P1141.cpp.obj: CXX_COMPILER__P1141_Debug F$:/algorithm2/P1141.cpp || cmake_object_order_depends_target_P1141
   DEP_FILE = CMakeFiles\P1141.dir\P1141.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\P1141.dir
   OBJECT_FILE_DIR = CMakeFiles\P1141.dir
+  TARGET_COMPILE_PDB = CMakeFiles\P1141.dir\
+  TARGET_PDB = P1141.pdb
 
 
 # =============================================================================
@@ -164,13 +215,15 @@ build CMakeFiles/P1141.dir/P1141.cpp.obj: CXX_COMPILER__P1141_Debug F$:/algorith
 
 build P1141.exe: CXX_EXECUTABLE_LINKER__P1141_Debug CMakeFiles/P1141.dir/P1141.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\P1141.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\P1141.dir\
   TARGET_FILE = P1141.exe
   TARGET_IMPLIB = libP1141.dll.a
-  TARGET_PDB = P1141.exe.dbg
+  TARGET_PDB = P1141.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target cal
@@ -183,9 +236,11 @@ build cmake_object_order_depends_target_cal: phony || CMakeFiles/cal.dir
 
 build CMakeFiles/cal.dir/cal.cpp.obj: CXX_COMPILER__cal_Debug F$:/algorithm2/cal.cpp || cmake_object_order_depends_target_cal
   DEP_FILE = CMakeFiles\cal.dir\cal.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\cal.dir
   OBJECT_FILE_DIR = CMakeFiles\cal.dir
+  TARGET_COMPILE_PDB = CMakeFiles\cal.dir\
+  TARGET_PDB = cal.pdb
 
 
 # =============================================================================
@@ -197,13 +252,15 @@ build CMakeFiles/cal.dir/cal.cpp.obj: CXX_COMPILER__cal_Debug F$:/algorithm2/cal
 
 build cal.exe: CXX_EXECUTABLE_LINKER__cal_Debug CMakeFiles/cal.dir/cal.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\cal.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\cal.dir\
   TARGET_FILE = cal.exe
   TARGET_IMPLIB = libcal.dll.a
-  TARGET_PDB = cal.exe.dbg
+  TARGET_PDB = cal.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target FHQ
@@ -216,9 +273,11 @@ build cmake_object_order_depends_target_FHQ: phony || CMakeFiles/FHQ.dir
 
 build CMakeFiles/FHQ.dir/FHQ.cpp.obj: CXX_COMPILER__FHQ_Debug F$:/algorithm2/FHQ.cpp || cmake_object_order_depends_target_FHQ
   DEP_FILE = CMakeFiles\FHQ.dir\FHQ.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\FHQ.dir
   OBJECT_FILE_DIR = CMakeFiles\FHQ.dir
+  TARGET_COMPILE_PDB = CMakeFiles\FHQ.dir\
+  TARGET_PDB = FHQ.pdb
 
 
 # =============================================================================
@@ -230,13 +289,15 @@ build CMakeFiles/FHQ.dir/FHQ.cpp.obj: CXX_COMPILER__FHQ_Debug F$:/algorithm2/FHQ
 
 build FHQ.exe: CXX_EXECUTABLE_LINKER__FHQ_Debug CMakeFiles/FHQ.dir/FHQ.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\FHQ.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\FHQ.dir\
   TARGET_FILE = FHQ.exe
   TARGET_IMPLIB = libFHQ.dll.a
-  TARGET_PDB = FHQ.exe.dbg
+  TARGET_PDB = FHQ.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target Test2
@@ -249,9 +310,11 @@ build cmake_object_order_depends_target_Test2: phony || CMakeFiles/Test2.dir
 
 build CMakeFiles/Test2.dir/Test2.cpp.obj: CXX_COMPILER__Test2_Debug F$:/algorithm2/Test2.cpp || cmake_object_order_depends_target_Test2
   DEP_FILE = CMakeFiles\Test2.dir\Test2.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\Test2.dir
   OBJECT_FILE_DIR = CMakeFiles\Test2.dir
+  TARGET_COMPILE_PDB = CMakeFiles\Test2.dir\
+  TARGET_PDB = Test2.pdb
 
 
 # =============================================================================
@@ -263,13 +326,15 @@ build CMakeFiles/Test2.dir/Test2.cpp.obj: CXX_COMPILER__Test2_Debug F$:/algorith
 
 build Test2.exe: CXX_EXECUTABLE_LINKER__Test2_Debug CMakeFiles/Test2.dir/Test2.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Test2.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\Test2.dir\
   TARGET_FILE = Test2.exe
   TARGET_IMPLIB = libTest2.dll.a
-  TARGET_PDB = Test2.exe.dbg
+  TARGET_PDB = Test2.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target Test3
@@ -282,9 +347,11 @@ build cmake_object_order_depends_target_Test3: phony || CMakeFiles/Test3.dir
 
 build CMakeFiles/Test3.dir/Test3.cpp.obj: CXX_COMPILER__Test3_Debug F$:/algorithm2/Test3.cpp || cmake_object_order_depends_target_Test3
   DEP_FILE = CMakeFiles\Test3.dir\Test3.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\Test3.dir
   OBJECT_FILE_DIR = CMakeFiles\Test3.dir
+  TARGET_COMPILE_PDB = CMakeFiles\Test3.dir\
+  TARGET_PDB = Test3.pdb
 
 
 # =============================================================================
@@ -296,13 +363,15 @@ build CMakeFiles/Test3.dir/Test3.cpp.obj: CXX_COMPILER__Test3_Debug F$:/algorith
 
 build Test3.exe: CXX_EXECUTABLE_LINKER__Test3_Debug CMakeFiles/Test3.dir/Test3.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Test3.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\Test3.dir\
   TARGET_FILE = Test3.exe
   TARGET_IMPLIB = libTest3.dll.a
-  TARGET_PDB = Test3.exe.dbg
+  TARGET_PDB = Test3.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target love
@@ -315,9 +384,11 @@ build cmake_object_order_depends_target_love: phony || CMakeFiles/love.dir
 
 build CMakeFiles/love.dir/love.cpp.obj: CXX_COMPILER__love_Debug F$:/algorithm2/love.cpp || cmake_object_order_depends_target_love
   DEP_FILE = CMakeFiles\love.dir\love.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\love.dir
   OBJECT_FILE_DIR = CMakeFiles\love.dir
+  TARGET_COMPILE_PDB = CMakeFiles\love.dir\
+  TARGET_PDB = love.pdb
 
 
 # =============================================================================
@@ -329,13 +400,15 @@ build CMakeFiles/love.dir/love.cpp.obj: CXX_COMPILER__love_Debug F$:/algorithm2/
 
 build love.exe: CXX_EXECUTABLE_LINKER__love_Debug CMakeFiles/love.dir/love.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\love.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\love.dir\
   TARGET_FILE = love.exe
   TARGET_IMPLIB = liblove.dll.a
-  TARGET_PDB = love.exe.dbg
+  TARGET_PDB = love.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target line_tree
@@ -348,9 +421,11 @@ build cmake_object_order_depends_target_line_tree: phony || CMakeFiles/line_tree
 
 build CMakeFiles/line_tree.dir/line_tree.cpp.obj: CXX_COMPILER__line_tree_Debug F$:/algorithm2/line_tree.cpp || cmake_object_order_depends_target_line_tree
   DEP_FILE = CMakeFiles\line_tree.dir\line_tree.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\line_tree.dir
   OBJECT_FILE_DIR = CMakeFiles\line_tree.dir
+  TARGET_COMPILE_PDB = CMakeFiles\line_tree.dir\
+  TARGET_PDB = line_tree.pdb
 
 
 # =============================================================================
@@ -362,13 +437,15 @@ build CMakeFiles/line_tree.dir/line_tree.cpp.obj: CXX_COMPILER__line_tree_Debug 
 
 build line_tree.exe: CXX_EXECUTABLE_LINKER__line_tree_Debug CMakeFiles/line_tree.dir/line_tree.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\line_tree.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\line_tree.dir\
   TARGET_FILE = line_tree.exe
   TARGET_IMPLIB = libline_tree.dll.a
-  TARGET_PDB = line_tree.exe.dbg
+  TARGET_PDB = line_tree.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target Legendre
@@ -381,9 +458,11 @@ build cmake_object_order_depends_target_Legendre: phony || CMakeFiles/Legendre.d
 
 build CMakeFiles/Legendre.dir/Legendre.cpp.obj: CXX_COMPILER__Legendre_Debug F$:/algorithm2/Legendre.cpp || cmake_object_order_depends_target_Legendre
   DEP_FILE = CMakeFiles\Legendre.dir\Legendre.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\Legendre.dir
   OBJECT_FILE_DIR = CMakeFiles\Legendre.dir
+  TARGET_COMPILE_PDB = CMakeFiles\Legendre.dir\
+  TARGET_PDB = Legendre.pdb
 
 
 # =============================================================================
@@ -395,13 +474,15 @@ build CMakeFiles/Legendre.dir/Legendre.cpp.obj: CXX_COMPILER__Legendre_Debug F$:
 
 build Legendre.exe: CXX_EXECUTABLE_LINKER__Legendre_Debug CMakeFiles/Legendre.dir/Legendre.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Legendre.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\Legendre.dir\
   TARGET_FILE = Legendre.exe
   TARGET_IMPLIB = libLegendre.dll.a
-  TARGET_PDB = Legendre.exe.dbg
+  TARGET_PDB = Legendre.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target mid_pre
@@ -414,9 +495,11 @@ build cmake_object_order_depends_target_mid_pre: phony || CMakeFiles/mid_pre.dir
 
 build CMakeFiles/mid_pre.dir/mid_pre.cpp.obj: CXX_COMPILER__mid_pre_Debug F$:/algorithm2/mid_pre.cpp || cmake_object_order_depends_target_mid_pre
   DEP_FILE = CMakeFiles\mid_pre.dir\mid_pre.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\mid_pre.dir
   OBJECT_FILE_DIR = CMakeFiles\mid_pre.dir
+  TARGET_COMPILE_PDB = CMakeFiles\mid_pre.dir\
+  TARGET_PDB = mid_pre.pdb
 
 
 # =============================================================================
@@ -428,13 +511,15 @@ build CMakeFiles/mid_pre.dir/mid_pre.cpp.obj: CXX_COMPILER__mid_pre_Debug F$:/al
 
 build mid_pre.exe: CXX_EXECUTABLE_LINKER__mid_pre_Debug CMakeFiles/mid_pre.dir/mid_pre.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\mid_pre.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\mid_pre.dir\
   TARGET_FILE = mid_pre.exe
   TARGET_IMPLIB = libmid_pre.dll.a
-  TARGET_PDB = mid_pre.exe.dbg
+  TARGET_PDB = mid_pre.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target gen
@@ -447,9 +532,11 @@ build cmake_object_order_depends_target_gen: phony || CMakeFiles/gen.dir
 
 build CMakeFiles/gen.dir/gen.cpp.obj: CXX_COMPILER__gen_Debug F$:/algorithm2/gen.cpp || cmake_object_order_depends_target_gen
   DEP_FILE = CMakeFiles\gen.dir\gen.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\gen.dir
   OBJECT_FILE_DIR = CMakeFiles\gen.dir
+  TARGET_COMPILE_PDB = CMakeFiles\gen.dir\
+  TARGET_PDB = gen.pdb
 
 
 # =============================================================================
@@ -461,13 +548,15 @@ build CMakeFiles/gen.dir/gen.cpp.obj: CXX_COMPILER__gen_Debug F$:/algorithm2/gen
 
 build gen.exe: CXX_EXECUTABLE_LINKER__gen_Debug CMakeFiles/gen.dir/gen.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\gen.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\gen.dir\
   TARGET_FILE = gen.exe
   TARGET_IMPLIB = libgen.dll.a
-  TARGET_PDB = gen.exe.dbg
+  TARGET_PDB = gen.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target Test4
@@ -480,9 +569,11 @@ build cmake_object_order_depends_target_Test4: phony || CMakeFiles/Test4.dir
 
 build CMakeFiles/Test4.dir/Test4.cpp.obj: CXX_COMPILER__Test4_Debug F$:/algorithm2/Test4.cpp || cmake_object_order_depends_target_Test4
   DEP_FILE = CMakeFiles\Test4.dir\Test4.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\Test4.dir
   OBJECT_FILE_DIR = CMakeFiles\Test4.dir
+  TARGET_COMPILE_PDB = CMakeFiles\Test4.dir\
+  TARGET_PDB = Test4.pdb
 
 
 # =============================================================================
@@ -494,13 +585,15 @@ build CMakeFiles/Test4.dir/Test4.cpp.obj: CXX_COMPILER__Test4_Debug F$:/algorith
 
 build Test4.exe: CXX_EXECUTABLE_LINKER__Test4_Debug CMakeFiles/Test4.dir/Test4.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Test4.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\Test4.dir\
   TARGET_FILE = Test4.exe
   TARGET_IMPLIB = libTest4.dll.a
-  TARGET_PDB = Test4.exe.dbg
+  TARGET_PDB = Test4.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target Test5
@@ -513,9 +606,11 @@ build cmake_object_order_depends_target_Test5: phony || CMakeFiles/Test5.dir
 
 build CMakeFiles/Test5.dir/Test5.cpp.obj: CXX_COMPILER__Test5_Debug F$:/algorithm2/Test5.cpp || cmake_object_order_depends_target_Test5
   DEP_FILE = CMakeFiles\Test5.dir\Test5.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\Test5.dir
   OBJECT_FILE_DIR = CMakeFiles\Test5.dir
+  TARGET_COMPILE_PDB = CMakeFiles\Test5.dir\
+  TARGET_PDB = Test5.pdb
 
 
 # =============================================================================
@@ -527,13 +622,15 @@ build CMakeFiles/Test5.dir/Test5.cpp.obj: CXX_COMPILER__Test5_Debug F$:/algorith
 
 build Test5.exe: CXX_EXECUTABLE_LINKER__Test5_Debug CMakeFiles/Test5.dir/Test5.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Test5.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\Test5.dir\
   TARGET_FILE = Test5.exe
   TARGET_IMPLIB = libTest5.dll.a
-  TARGET_PDB = Test5.exe.dbg
+  TARGET_PDB = Test5.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target aaa
@@ -546,9 +643,11 @@ build cmake_object_order_depends_target_aaa: phony || CMakeFiles/aaa.dir
 
 build CMakeFiles/aaa.dir/aaa.cpp.obj: CXX_COMPILER__aaa_Debug F$:/algorithm2/aaa.cpp || cmake_object_order_depends_target_aaa
   DEP_FILE = CMakeFiles\aaa.dir\aaa.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\aaa.dir
   OBJECT_FILE_DIR = CMakeFiles\aaa.dir
+  TARGET_COMPILE_PDB = CMakeFiles\aaa.dir\
+  TARGET_PDB = aaa.pdb
 
 
 # =============================================================================
@@ -560,13 +659,15 @@ build CMakeFiles/aaa.dir/aaa.cpp.obj: CXX_COMPILER__aaa_Debug F$:/algorithm2/aaa
 
 build aaa.exe: CXX_EXECUTABLE_LINKER__aaa_Debug CMakeFiles/aaa.dir/aaa.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\aaa.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\aaa.dir\
   TARGET_FILE = aaa.exe
   TARGET_IMPLIB = libaaa.dll.a
-  TARGET_PDB = aaa.exe.dbg
+  TARGET_PDB = aaa.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target hhhh
@@ -579,9 +680,11 @@ build cmake_object_order_depends_target_hhhh: phony || CMakeFiles/hhhh.dir
 
 build CMakeFiles/hhhh.dir/hhhh.cpp.obj: CXX_COMPILER__hhhh_Debug F$:/algorithm2/hhhh.cpp || cmake_object_order_depends_target_hhhh
   DEP_FILE = CMakeFiles\hhhh.dir\hhhh.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\hhhh.dir
   OBJECT_FILE_DIR = CMakeFiles\hhhh.dir
+  TARGET_COMPILE_PDB = CMakeFiles\hhhh.dir\
+  TARGET_PDB = hhhh.pdb
 
 
 # =============================================================================
@@ -593,13 +696,15 @@ build CMakeFiles/hhhh.dir/hhhh.cpp.obj: CXX_COMPILER__hhhh_Debug F$:/algorithm2/
 
 build hhhh.exe: CXX_EXECUTABLE_LINKER__hhhh_Debug CMakeFiles/hhhh.dir/hhhh.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\hhhh.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\hhhh.dir\
   TARGET_FILE = hhhh.exe
   TARGET_IMPLIB = libhhhh.dll.a
-  TARGET_PDB = hhhh.exe.dbg
+  TARGET_PDB = hhhh.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target ggg
@@ -612,9 +717,11 @@ build cmake_object_order_depends_target_ggg: phony || CMakeFiles/ggg.dir
 
 build CMakeFiles/ggg.dir/ggg.cpp.obj: CXX_COMPILER__ggg_Debug F$:/algorithm2/ggg.cpp || cmake_object_order_depends_target_ggg
   DEP_FILE = CMakeFiles\ggg.dir\ggg.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\ggg.dir
   OBJECT_FILE_DIR = CMakeFiles\ggg.dir
+  TARGET_COMPILE_PDB = CMakeFiles\ggg.dir\
+  TARGET_PDB = ggg.pdb
 
 
 # =============================================================================
@@ -626,13 +733,15 @@ build CMakeFiles/ggg.dir/ggg.cpp.obj: CXX_COMPILER__ggg_Debug F$:/algorithm2/ggg
 
 build ggg.exe: CXX_EXECUTABLE_LINKER__ggg_Debug CMakeFiles/ggg.dir/ggg.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ggg.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\ggg.dir\
   TARGET_FILE = ggg.exe
   TARGET_IMPLIB = libggg.dll.a
-  TARGET_PDB = ggg.exe.dbg
+  TARGET_PDB = ggg.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target ccc
@@ -645,9 +754,11 @@ build cmake_object_order_depends_target_ccc: phony || CMakeFiles/ccc.dir
 
 build CMakeFiles/ccc.dir/ccc.cpp.obj: CXX_COMPILER__ccc_Debug F$:/algorithm2/ccc.cpp || cmake_object_order_depends_target_ccc
   DEP_FILE = CMakeFiles\ccc.dir\ccc.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\ccc.dir
   OBJECT_FILE_DIR = CMakeFiles\ccc.dir
+  TARGET_COMPILE_PDB = CMakeFiles\ccc.dir\
+  TARGET_PDB = ccc.pdb
 
 
 # =============================================================================
@@ -659,13 +770,15 @@ build CMakeFiles/ccc.dir/ccc.cpp.obj: CXX_COMPILER__ccc_Debug F$:/algorithm2/ccc
 
 build ccc.exe: CXX_EXECUTABLE_LINKER__ccc_Debug CMakeFiles/ccc.dir/ccc.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\ccc.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\ccc.dir\
   TARGET_FILE = ccc.exe
   TARGET_IMPLIB = libccc.dll.a
-  TARGET_PDB = ccc.exe.dbg
+  TARGET_PDB = ccc.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target LLL
@@ -678,9 +791,11 @@ build cmake_object_order_depends_target_LLL: phony || CMakeFiles/LLL.dir
 
 build CMakeFiles/LLL.dir/LLL.cpp.obj: CXX_COMPILER__LLL_Debug F$:/algorithm2/LLL.cpp || cmake_object_order_depends_target_LLL
   DEP_FILE = CMakeFiles\LLL.dir\LLL.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\LLL.dir
   OBJECT_FILE_DIR = CMakeFiles\LLL.dir
+  TARGET_COMPILE_PDB = CMakeFiles\LLL.dir\
+  TARGET_PDB = LLL.pdb
 
 
 # =============================================================================
@@ -692,13 +807,15 @@ build CMakeFiles/LLL.dir/LLL.cpp.obj: CXX_COMPILER__LLL_Debug F$:/algorithm2/LLL
 
 build LLL.exe: CXX_EXECUTABLE_LINKER__LLL_Debug CMakeFiles/LLL.dir/LLL.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\LLL.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\LLL.dir\
   TARGET_FILE = LLL.exe
   TARGET_IMPLIB = libLLL.dll.a
-  TARGET_PDB = LLL.exe.dbg
+  TARGET_PDB = LLL.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target DDD
@@ -711,9 +828,11 @@ build cmake_object_order_depends_target_DDD: phony || CMakeFiles/DDD.dir
 
 build CMakeFiles/DDD.dir/DDD.cpp.obj: CXX_COMPILER__DDD_Debug F$:/algorithm2/DDD.cpp || cmake_object_order_depends_target_DDD
   DEP_FILE = CMakeFiles\DDD.dir\DDD.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\DDD.dir
   OBJECT_FILE_DIR = CMakeFiles\DDD.dir
+  TARGET_COMPILE_PDB = CMakeFiles\DDD.dir\
+  TARGET_PDB = DDD.pdb
 
 
 # =============================================================================
@@ -725,13 +844,15 @@ build CMakeFiles/DDD.dir/DDD.cpp.obj: CXX_COMPILER__DDD_Debug F$:/algorithm2/DDD
 
 build DDD.exe: CXX_EXECUTABLE_LINKER__DDD_Debug CMakeFiles/DDD.dir/DDD.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\DDD.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\DDD.dir\
   TARGET_FILE = DDD.exe
   TARGET_IMPLIB = libDDD.dll.a
-  TARGET_PDB = DDD.exe.dbg
+  TARGET_PDB = DDD.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target BBB
@@ -744,9 +865,11 @@ build cmake_object_order_depends_target_BBB: phony || CMakeFiles/BBB.dir
 
 build CMakeFiles/BBB.dir/BBB.cpp.obj: CXX_COMPILER__BBB_Debug F$:/algorithm2/BBB.cpp || cmake_object_order_depends_target_BBB
   DEP_FILE = CMakeFiles\BBB.dir\BBB.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\BBB.dir
   OBJECT_FILE_DIR = CMakeFiles\BBB.dir
+  TARGET_COMPILE_PDB = CMakeFiles\BBB.dir\
+  TARGET_PDB = BBB.pdb
 
 
 # =============================================================================
@@ -758,13 +881,15 @@ build CMakeFiles/BBB.dir/BBB.cpp.obj: CXX_COMPILER__BBB_Debug F$:/algorithm2/BBB
 
 build BBB.exe: CXX_EXECUTABLE_LINKER__BBB_Debug CMakeFiles/BBB.dir/BBB.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\BBB.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\BBB.dir\
   TARGET_FILE = BBB.exe
   TARGET_IMPLIB = libBBB.dll.a
-  TARGET_PDB = BBB.exe.dbg
+  TARGET_PDB = BBB.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target Euler
@@ -777,9 +902,11 @@ build cmake_object_order_depends_target_Euler: phony || CMakeFiles/Euler.dir
 
 build CMakeFiles/Euler.dir/Euler.cpp.obj: CXX_COMPILER__Euler_Debug F$:/algorithm2/Euler.cpp || cmake_object_order_depends_target_Euler
   DEP_FILE = CMakeFiles\Euler.dir\Euler.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\Euler.dir
   OBJECT_FILE_DIR = CMakeFiles\Euler.dir
+  TARGET_COMPILE_PDB = CMakeFiles\Euler.dir\
+  TARGET_PDB = Euler.pdb
 
 
 # =============================================================================
@@ -791,13 +918,15 @@ build CMakeFiles/Euler.dir/Euler.cpp.obj: CXX_COMPILER__Euler_Debug F$:/algorith
 
 build Euler.exe: CXX_EXECUTABLE_LINKER__Euler_Debug CMakeFiles/Euler.dir/Euler.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Euler.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\Euler.dir\
   TARGET_FILE = Euler.exe
   TARGET_IMPLIB = libEuler.dll.a
-  TARGET_PDB = Euler.exe.dbg
+  TARGET_PDB = Euler.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target rand_gen
@@ -810,9 +939,11 @@ build cmake_object_order_depends_target_rand_gen: phony || CMakeFiles/rand_gen.d
 
 build CMakeFiles/rand_gen.dir/rand_gen.cpp.obj: CXX_COMPILER__rand_gen_Debug F$:/algorithm2/rand_gen.cpp || cmake_object_order_depends_target_rand_gen
   DEP_FILE = CMakeFiles\rand_gen.dir\rand_gen.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\rand_gen.dir
   OBJECT_FILE_DIR = CMakeFiles\rand_gen.dir
+  TARGET_COMPILE_PDB = CMakeFiles\rand_gen.dir\
+  TARGET_PDB = rand_gen.pdb
 
 
 # =============================================================================
@@ -824,13 +955,15 @@ build CMakeFiles/rand_gen.dir/rand_gen.cpp.obj: CXX_COMPILER__rand_gen_Debug F$:
 
 build rand_gen.exe: CXX_EXECUTABLE_LINKER__rand_gen_Debug CMakeFiles/rand_gen.dir/rand_gen.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\rand_gen.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\rand_gen.dir\
   TARGET_FILE = rand_gen.exe
   TARGET_IMPLIB = librand_gen.dll.a
-  TARGET_PDB = rand_gen.exe.dbg
+  TARGET_PDB = rand_gen.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target EEE
@@ -843,9 +976,11 @@ build cmake_object_order_depends_target_EEE: phony || CMakeFiles/EEE.dir
 
 build CMakeFiles/EEE.dir/EEE.cpp.obj: CXX_COMPILER__EEE_Debug F$:/algorithm2/EEE.cpp || cmake_object_order_depends_target_EEE
   DEP_FILE = CMakeFiles\EEE.dir\EEE.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\EEE.dir
   OBJECT_FILE_DIR = CMakeFiles\EEE.dir
+  TARGET_COMPILE_PDB = CMakeFiles\EEE.dir\
+  TARGET_PDB = EEE.pdb
 
 
 # =============================================================================
@@ -857,13 +992,15 @@ build CMakeFiles/EEE.dir/EEE.cpp.obj: CXX_COMPILER__EEE_Debug F$:/algorithm2/EEE
 
 build EEE.exe: CXX_EXECUTABLE_LINKER__EEE_Debug CMakeFiles/EEE.dir/EEE.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\EEE.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\EEE.dir\
   TARGET_FILE = EEE.exe
   TARGET_IMPLIB = libEEE.dll.a
-  TARGET_PDB = EEE.exe.dbg
+  TARGET_PDB = EEE.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target FFF
@@ -876,9 +1013,11 @@ build cmake_object_order_depends_target_FFF: phony || CMakeFiles/FFF.dir
 
 build CMakeFiles/FFF.dir/FFF.cpp.obj: CXX_COMPILER__FFF_Debug F$:/algorithm2/FFF.cpp || cmake_object_order_depends_target_FFF
   DEP_FILE = CMakeFiles\FFF.dir\FFF.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\FFF.dir
   OBJECT_FILE_DIR = CMakeFiles\FFF.dir
+  TARGET_COMPILE_PDB = CMakeFiles\FFF.dir\
+  TARGET_PDB = FFF.pdb
 
 
 # =============================================================================
@@ -890,13 +1029,15 @@ build CMakeFiles/FFF.dir/FFF.cpp.obj: CXX_COMPILER__FFF_Debug F$:/algorithm2/FFF
 
 build FFF.exe: CXX_EXECUTABLE_LINKER__FFF_Debug CMakeFiles/FFF.dir/FFF.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\FFF.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\FFF.dir\
   TARGET_FILE = FFF.exe
   TARGET_IMPLIB = libFFF.dll.a
-  TARGET_PDB = FFF.exe.dbg
+  TARGET_PDB = FFF.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target clear_in
@@ -909,9 +1050,11 @@ build cmake_object_order_depends_target_clear_in: phony || CMakeFiles/clear_in.d
 
 build CMakeFiles/clear_in.dir/clear_in.cpp.obj: CXX_COMPILER__clear_in_Debug F$:/algorithm2/clear_in.cpp || cmake_object_order_depends_target_clear_in
   DEP_FILE = CMakeFiles\clear_in.dir\clear_in.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
   OBJECT_DIR = CMakeFiles\clear_in.dir
   OBJECT_FILE_DIR = CMakeFiles\clear_in.dir
+  TARGET_COMPILE_PDB = CMakeFiles\clear_in.dir\
+  TARGET_PDB = clear_in.pdb
 
 
 # =============================================================================
@@ -923,13 +1066,89 @@ build CMakeFiles/clear_in.dir/clear_in.cpp.obj: CXX_COMPILER__clear_in_Debug F$:
 
 build clear_in.exe: CXX_EXECUTABLE_LINKER__clear_in_Debug CMakeFiles/clear_in.dir/clear_in.cpp.obj
   FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\clear_in.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\clear_in.dir\
   TARGET_FILE = clear_in.exe
   TARGET_IMPLIB = libclear_in.dll.a
-  TARGET_PDB = clear_in.exe.dbg
+  TARGET_PDB = clear_in.pdb
+
+# =============================================================================
+# Object build statements for EXECUTABLE target comp
+
+
+#############################################
+# Order-only phony target for comp
+
+build cmake_object_order_depends_target_comp: phony || CMakeFiles/comp.dir
+
+build CMakeFiles/comp.dir/comp.cpp.obj: CXX_COMPILER__comp_Debug F$:/algorithm2/comp.cpp || cmake_object_order_depends_target_comp
+  DEP_FILE = CMakeFiles\comp.dir\comp.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  OBJECT_DIR = CMakeFiles\comp.dir
+  OBJECT_FILE_DIR = CMakeFiles\comp.dir
+  TARGET_COMPILE_PDB = CMakeFiles\comp.dir\
+  TARGET_PDB = comp.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target comp
+
+
+#############################################
+# Link the executable comp.exe
+
+build comp.exe: CXX_EXECUTABLE_LINKER__comp_Debug CMakeFiles/comp.dir/comp.cpp.obj
+  FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\comp.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\comp.dir\
+  TARGET_FILE = comp.exe
+  TARGET_IMPLIB = libcomp.dll.a
+  TARGET_PDB = comp.pdb
+
+# =============================================================================
+# Object build statements for EXECUTABLE target Main
+
+
+#############################################
+# Order-only phony target for Main
+
+build cmake_object_order_depends_target_Main: phony || CMakeFiles/Main.dir
+
+build CMakeFiles/Main.dir/projects/Main.cpp.obj: CXX_COMPILER__Main_Debug F$:/algorithm2/projects/Main.cpp || cmake_object_order_depends_target_Main
+  DEP_FILE = CMakeFiles\Main.dir\projects\Main.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++20
+  OBJECT_DIR = CMakeFiles\Main.dir
+  OBJECT_FILE_DIR = CMakeFiles\Main.dir\projects
+  TARGET_COMPILE_PDB = CMakeFiles\Main.dir\
+  TARGET_PDB = Main.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target Main
+
+
+#############################################
+# Link the executable Main.exe
+
+build Main.exe: CXX_EXECUTABLE_LINKER__Main_Debug CMakeFiles/Main.dir/projects/Main.cpp.obj
+  FLAGS = -g
+  LINK_FLAGS = -Wl,--stack=8388608
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\Main.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\Main.dir\
+  TARGET_FILE = Main.exe
+  TARGET_IMPLIB = libMain.dll.a
+  TARGET_PDB = Main.pdb
 
 
 #############################################
@@ -969,9 +1188,13 @@ build FFF: phony FFF.exe
 
 build FHQ: phony FHQ.exe
 
+build GG: phony GG.exe
+
 build LLL: phony LLL.exe
 
 build Legendre: phony Legendre.exe
+
+build Main: phony Main.exe
 
 build P1: phony P1.exe
 
@@ -997,6 +1220,8 @@ build ccc: phony ccc.exe
 
 build clear_in: phony clear_in.exe
 
+build comp: phony comp.exe
+
 build gen: phony gen.exe
 
 build ggg: phony ggg.exe
@@ -1019,7 +1244,7 @@ build rand_gen: phony rand_gen.exe
 #############################################
 # Folder: F:/algorithm2/cmake-build-debug
 
-build all: phony algorithm2.exe Test.exe P1.exe P1141.exe cal.exe FHQ.exe Test2.exe Test3.exe love.exe line_tree.exe Legendre.exe mid_pre.exe gen.exe Test4.exe Test5.exe aaa.exe hhhh.exe ggg.exe ccc.exe LLL.exe DDD.exe BBB.exe Euler.exe rand_gen.exe EEE.exe FFF.exe clear_in.exe
+build all: phony algorithm2.exe GG.exe Test.exe P1.exe P1141.exe cal.exe FHQ.exe Test2.exe Test3.exe love.exe line_tree.exe Legendre.exe mid_pre.exe gen.exe Test4.exe Test5.exe aaa.exe hhhh.exe ggg.exe ccc.exe LLL.exe DDD.exe BBB.exe Euler.exe rand_gen.exe EEE.exe FFF.exe clear_in.exe comp.exe Main.exe
 
 # =============================================================================
 # Built-in targets
@@ -1028,14 +1253,14 @@ build all: phony algorithm2.exe Test.exe P1.exe P1141.exe cal.exe FHQ.exe Test2.
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeRCCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeGenericSystem.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeRCInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-C.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C-ABI.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX-ABI.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-windres.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake F$:/algorithm2/CMakeLists.txt
+build build.ninja: RERUN_CMAKE | CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeRCCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCCompiler.cmake.in E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCCompilerABI.c E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXCompiler.cmake.in E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXCompilerABI.cpp E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCompilerIdDetection.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCXXCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCompileFeatures.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCompilerABI.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCompilerId.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineRCCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineSystem.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeFindBinUtils.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeGenericSystem.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeParseImplicitIncludeInfo.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeParseImplicitLinkInfo.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeParseLibraryArchitecture.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeRCCompiler.cmake.in E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeRCInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystem.cmake.in E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeTestCCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeTestCXXCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeTestCompilerCommon.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeTestRCCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/ADSP-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/ARMCC-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/ARMClang-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/AppleClang-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Borland-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Bruce-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Clang-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Clang-DetermineCompilerInternal.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Compaq-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Cray-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Embarcadero-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Fujitsu-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GHS-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-C.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-FindBinUtils.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/HP-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/HP-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IAR-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Intel-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/LCC-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/MSVC-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/NVHPC-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/NVIDIA-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/PGI-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/PathScale-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/SCO-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/SDCC-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/SunPro-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/TI-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Tasking-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Watcom-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/XL-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/XL-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/XLClang-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/zOS-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Internal/FeatureTesting.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-Determine-CXX.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C-ABI.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX-ABI.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-windres.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake F$:/algorithm2/CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeRCCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeGenericSystem.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeRCInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-C.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C-ABI.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX-ABI.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-windres.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake F$:/algorithm2/CMakeLists.txt: phony
+build CMakeCache.txt CMakeFiles/3.25.2/CMakeCCompiler.cmake CMakeFiles/3.25.2/CMakeCXXCompiler.cmake CMakeFiles/3.25.2/CMakeRCCompiler.cmake CMakeFiles/3.25.2/CMakeSystem.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCCompiler.cmake.in E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCCompilerABI.c E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXCompiler.cmake.in E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXCompilerABI.cpp E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCXXInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCommonLanguageInclude.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeCompilerIdDetection.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCXXCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCompileFeatures.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCompilerABI.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineCompilerId.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineRCCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeDetermineSystem.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeFindBinUtils.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeGenericSystem.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeInitializeConfigs.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeLanguageInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeParseImplicitIncludeInfo.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeParseImplicitLinkInfo.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeParseLibraryArchitecture.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeRCCompiler.cmake.in E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeRCInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystem.cmake.in E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInformation.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeSystemSpecificInitialize.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeTestCCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeTestCXXCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeTestCompilerCommon.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/CMakeTestRCCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/ADSP-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/ARMCC-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/ARMClang-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/AppleClang-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Borland-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Bruce-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/CMakeCommonCompilerMacros.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Clang-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Clang-DetermineCompilerInternal.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Compaq-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Cray-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Embarcadero-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Fujitsu-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GHS-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-C.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-CXX.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU-FindBinUtils.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/GNU.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/HP-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/HP-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IAR-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Intel-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/LCC-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/MSVC-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/NVHPC-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/NVIDIA-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/PGI-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/PathScale-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/SCO-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/SDCC-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/SunPro-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/TI-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Tasking-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/Watcom-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/XL-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/XL-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/XLClang-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/zOS-C-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Internal/FeatureTesting.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-Determine-CXX.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C-ABI.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-C.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX-ABI.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU-CXX.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-GNU.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows-windres.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/Windows.cmake E$:/Clion/CLion$ 2023.1.3/bin/cmake/win/x64/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake F$:/algorithm2/CMakeLists.txt: phony
 
 
 #############################################
