@@ -7,11 +7,11 @@ typedef long long LL;
 struct CHREQ{
     LL val,tm;
 };
-const LL N=1e4;
+const LL NN=1e4;
 int cc=0;
-LL p[(int)N+1];
-LL fi[(int)N+1];
-bool has[(int)N+1];
+LL pp[(int)NN + 1];
+LL fi[(int)NN + 1];
+bool has[(int)NN + 1];
 LL gcd(LL a,LL b){
     return b?gcd(b,a%b):a;
 }
@@ -29,13 +29,13 @@ LL qpow(LL a,LL t,LL mod){
     return res;
 }
 void init(){
-    for(int i=2;i<=N;i++){
-        if(!has[i]) { fi[i]=i-1;p[cc++] = i; }
-        for(int j=0; j < cc && p[j] * i <= N; j++){
-            has[p[j]*i]=true;
-            fi[p[j]*i]=fi[i]*(p[j]-1);
-            if(i%p[j]==0){
-                fi[p[j]*i]=p[j]*fi[i];
+    for(int i=2; i <= NN; i++){
+        if(!has[i]) { fi[i]=i-1;pp[cc++] = i; }
+        for(int j=0; j < cc && pp[j] * i <= NN; j++){
+            has[pp[j] * i]=true;
+            fi[pp[j] * i]= fi[i] * (pp[j] - 1);
+            if(i % pp[j] == 0){
+                fi[pp[j] * i]= pp[j] * fi[i];
                 break;
             }
         }
@@ -46,10 +46,10 @@ vector<CHREQ> facc(LL x){
     vector<CHREQ> res;
     while(x!=1){
         for(int i=la; i < cc; i++){
-            if(x%p[i]==0){
-                x/=p[i];
-                if(res.empty()||p[i]!=res[res.size()-1].val){
-                    res.push_back({p[i],1});
+            if(x % pp[i] == 0){
+                x/=pp[i];
+                if(res.empty() || pp[i] != res[res.size() - 1].val){
+                    res.push_back({pp[i], 1});
                 }else{
                     res[res.size()-1].tm++;
                 }

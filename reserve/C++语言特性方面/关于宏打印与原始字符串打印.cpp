@@ -2,8 +2,6 @@
 #define IOS std::ios::sync_with_stdio(false);std::cin.tie(nullptr);std::cout.tie(nullptr);
 #define ls ((u)<<1)
 #define rs ((u)<<1|1)
-#define bt32 bitset<32>
-#define bt64 bitset<64>
 #define mid (((l)+(r))>>1)
 #define lowbit(x) ((x)&(-(x)))
 #define itn int
@@ -13,22 +11,15 @@
 #define pii pair<int,int>
 #define LL long long
 using namespace std;
-constexpr int NN= 3e5 + 5;
+constexpr int N=3e5+5;
 const int SIZ=1e7;
 constexpr LL inf=1e12;
-template<typename T>
-string tran64(const T& b){
-    auto a=b;
-    uint64_t bits=reinterpret_cast<uint64_t&>(a);
-    return bt64(bits).to_string();
-}
-template<typename T>
-string tran32(T& a){
-    uint32_t bits=reinterpret_cast<uint32_t&>(a);
-    return bt32(bits).to_string();
-}
+#define TIMESTAMP 20240316-092209
+#define STR_HELPER(x) #x
+#define STR(x) STR_HELPER(x)
 signed main(){
-    IOS;
-    size_t a=1152921504606846972;
-    cout<<tran64(a);
+    string a= R"(\n\n\n\n\n\n)";//打印原始字符串,不进行转义
+    cout<<a<<endl;
+    string b=STR(TIMESTAMP);//文本打印宏值
+    cout<<b<<endl;
 }

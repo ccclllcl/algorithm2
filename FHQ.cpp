@@ -49,8 +49,8 @@ int merge(int x,int y){
 }
 void Insert(int v){
     int x,y,z;
-    split(rt1, v, x, y);
-    z= newnode(v);
+    split(rt1, x, x, y);
+    z= newnode(x);
     rt1= merge(merge(x, z), y);
 }
 int get_Kth(int k,int p=rt1){

@@ -19,12 +19,12 @@ public:
         function<string(string&,int)> calc=[&](string& s,int cnt)->string{
             string tpp(cnt,'a');
             if(yuan[s[0]]){
-                return s+"ma"+tpp;
+                return s+"ma1"+tpp;
             }
             else{
                 string aa=s.substr(1);
                 aa.push_back(s[0]);
-                return aa+"ma"+tpp;
+                return aa+"ma1"+tpp;
             }
         };
      istringstream str(sentence);

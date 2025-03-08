@@ -7,20 +7,20 @@ https://blog.csdn.net/wdq347/article/details/9313699
 inline bool check(ll x)
 {
     ///检查平方数
-    ll y = pow(x, 0.5);
-    if(y * y == x || (y + 1) * (y + 1) == x)
+    ll Y = pow(x, 0.5);
+    if(Y * Y == x || (Y + 1) * (Y + 1) == x)
         return true;
     ///检查立方数
-    y = pow(x, 1.0 / 3);
-    if(y * y * y == x || (y + 1) * (y + 1) * (y + 1) == x || (y + 2) * (y + 2) * (y + 2) == x)
+    Y = pow(x, 1.0 / 3);
+    if(Y * Y * Y == x || (Y + 1) * (Y + 1) * (Y + 1) == x || (Y + 2) * (Y + 2) * (Y + 2) == x)
         return true;
     return false;
 }
 
 求逆元函数:
-LL inv(const LL& x, const LL& y) {
+LL inv(const LL& x, const LL& Y) {
     assert(x != 0);
-    LL u = 0, v = 1, a = x, m = y, t;
+    LL u = 0, v = 1, a = x, m = Y, t;
     while (a != 0) {
         t = m / a;
         swap(a, m -= t * a);
@@ -28,4 +28,18 @@ LL inv(const LL& x, const LL& y) {
     }
     assert(m == 1);
     return u;
+}
+
+
+杜教筛:
+https://www.luogu.com.cn/problem/solution/P4213
+ll GetSum(int n) { // 算 f 前缀和的函数
+  ll ans = f_g_sum(n); // 算 f * g 的前缀和
+  // 以下这个 for 循环是数论分块
+  for(ll l = 2, r; l <= n; l = r + 1) { // 注意从 2 开始
+    r = (n / (n / l));
+    ans -= (g_sum(r) - g_sum(l - 1)) * GetSum(n / l);
+    // g_sum 是 g 的前缀和
+    // 递归 GetSum 求解
+  } return ans;
 }

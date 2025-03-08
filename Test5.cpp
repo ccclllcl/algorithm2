@@ -19,10 +19,10 @@ double cal(double Uh){
 }
 int main(){
 
-//    vector<double> arr={-21.96,-26.07,24.17,20.07};
+//    vector<ld> tr={-21.96,-26.07,24.17,20.07};
 //    int st=9;
-//    while(cin>>arr[0]>>arr[1]>>arr[2]>>arr[3])
-//    cout<<10000*cal(sum(arr[0],arr[1],arr[2],arr[3]))<<endl;
+//    while(cin>>tr[0]>>tr[1]>>tr[2]>>tr[3])
+//    cout<<10000*cal(sum(tr[0],tr[1],tr[2],tr[3]))<<endl;
     vector<double> arr1(17);
     for(int i=0;i<17;i++)cin>>arr1[i];
     vector<double> arr2(17);

@@ -1,8 +1,9 @@
 #include<bits/stdc++.h>
+#define LLL __int128
 using namespace std;
 typedef long long LL;
-LL qpow(LL a,LL t,LL md){
-    LL res=1;
+LLL qpow(LLL a,LL t,LLL md){
+    LLL res=1;
     while(t){
         if(t&1)res*=a,res%=md;
         t>>=1;
@@ -17,12 +18,12 @@ bool Rabin(LL n){   //判断某数是否为质数(可能将非质数误判为质
     if(n==2||n==3)return true;
     if(n==1)return false;
     if(n%2==0)return false;
-    LL r=0;
-    LL d=n-1;
+    LLL r=0;
+    LLL d=n-1;
     while(d%2==0)d>>=1,r++;
     for(int _=0;_<k;_++){
         LL a=uniform_int_distribution<LL>(2, n - 2)(rng);
-        LL g=qpow(a, d, n);
+        LLL g=qpow(a, d, n);
         if(g==1|| g == n - 1)continue;
         int u=0;
         for(;u<r-1;u++){
@@ -38,8 +39,8 @@ LL Pollard_Rho(LL n){   //找到n的一个非n非1的因数(可能失败)
     static mt19937_64 sj(chrono::steady_clock::now().time_since_epoch().count());
     uniform_int_distribution<LL> u0(1,n-1);
     LL c=u0(sj);
-    auto f=[&](LL x){return ((__int128)x*x+c)%n;};
-    LL x=0,y=0,s=1;
+    auto f=[&](LLL x){return ((__int128)x*x+c)%n;};
+    LLL x=0,y=0,s=1;
     for(int k=1;;k<<=1,y=x,s=1){
         for(int i=1;i<=k;i++){
             x=f(x);
@@ -49,18 +50,18 @@ LL Pollard_Rho(LL n){   //找到n的一个非n非1的因数(可能失败)
                 if(d>1)return d;
             }
         }
-        LL d=gcd(s,n);
+        LLL d=gcd(s,n);
         if(d>1)return d;
     }
     return n;
 }
-void get_factor(LL n,vector<LL>& res){   //分解质因数
+void get_factor(LLL n,vector<LL>& res){   //分解质因数
     if(n==1)return;
     if(Rabin(n)){
         res.push_back(n);
         return;
     }
-    LL x=n;
+    LLL x=n;
     while(x==n)x= Pollard_Rho(n);
     get_factor(x,res), get_factor(n/x,res);
 }

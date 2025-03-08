@@ -1,4 +1,5 @@
 F:/algorithm2/cmake-build-debug/CMakeFiles/algorithm2.dir
+F:/algorithm2/cmake-build-debug/CMakeFiles/GG.dir
 F:/algorithm2/cmake-build-debug/CMakeFiles/Test.dir
 F:/algorithm2/cmake-build-debug/CMakeFiles/P1.dir
 F:/algorithm2/cmake-build-debug/CMakeFiles/P1141.dir
@@ -25,5 +26,7 @@ F:/algorithm2/cmake-build-debug/CMakeFiles/rand_gen.dir
 F:/algorithm2/cmake-build-debug/CMakeFiles/EEE.dir
 F:/algorithm2/cmake-build-debug/CMakeFiles/FFF.dir
 F:/algorithm2/cmake-build-debug/CMakeFiles/clear_in.dir
+F:/algorithm2/cmake-build-debug/CMakeFiles/comp.dir
+F:/algorithm2/cmake-build-debug/CMakeFiles/Main.dir
 F:/algorithm2/cmake-build-debug/CMakeFiles/edit_cache.dir
 F:/algorithm2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
