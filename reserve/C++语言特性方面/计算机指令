@@ -1,0 +1,2 @@
+Linux:
+    netstat -ano  #查看当前网络连接(协议,端口,状态,PID等)
