@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 #define LL long long
 using namespace std;
-constexpr int NN= 3e5 + 5;
+constexpr int N= 3e5 + 5;
 constexpr LL inf=1e12;
 vector<int> KMP(const string& S, const string& T){
     vector<int> Next;  //回溯指针  j和Next[j]之间的关系是j前面有若干个字符组成的串与[0,Next[j]-1]相同

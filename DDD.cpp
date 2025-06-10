@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 #include<bits/extc++.h>
+#include <ext/rope>
 #define IOS std::ios::sync_with_stdio(false);std::cin.tie(nullptr);std::cout.tie(nullptr);
 #define all(x) (x).begin(),(x).end()
 #define quchong(x) (x).erase(unique(all(x)),(x).end())
@@ -26,6 +27,7 @@
 #define ui64 uint64_t
 #define ui32 uint32_t
 using namespace std;
+using namespace __gnu_cxx;
 using namespace __gnu_pbds;
 template<typename T>
 using RBTree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
@@ -81,48 +83,8 @@ const ld eps=1e-9;
 const int NN=2e6+5;
 const int SIZ=1e7;
 const LL inf=1e17;
-LL Euler_dis(pll a,pll b){
-    return abs(a.first-b.first)+abs(a.second-b.second);
-}
-int dx[4]={0,1,0,-1};
-int dy[4]={1,0,-1,0};
 void solve(){
-    int n;
-    cin>>n;
-    pll ed;
-    cin>>ed;
-    vector<LL> D(n-1);
-    cin>>D;
-    auto check=[&](pll st,int x)->bool{
-        if(x==0)return st==pll{0,0};
-        LL lp= Euler_dis({0,0},st);
-        LL tot=0;
-        for(int i=0;i<x;i++){
-            tot+=D[i];
-        }
-        if(tot<lp)return false;
-        if((tot+lp)%2)return false;
-        for(int i=0;i<x;i++){
-            if(tot-D[i]+lp<D[i])return false;
-        }
-        return true;
-    };
-    if(!check(ed,n-1)){
-        cout<<-1;
-        return;
-    }
-    vector<pll> ans;
-    ans.emplace_back(ed);
-    pll la=ed;
-    for(int x=n-2;x;x--){
-        vector<pll> dai;
-        for(int u=0;u<4;u++){
-            pll ne= {la.first + D[x] * dx[u],la.second+D[x]*dy[u]};
-            dai.emplace_back(ne);
-        }
-        LL b=dai[0].second-dai[0].first;
 
-    }
 }
 signed main(){
     IOS;

@@ -14,6 +14,7 @@ struct state{
 state st[MAXLEN*2];
 int sz=0,last=0;
 void sam_init(){
+    sz=0,last=0;
     st[0].len=0;
     st[0].link=-1;
     last=0;

@@ -177,18 +177,6 @@ vector<LL> prob(const string& s){
     return res;
 }
 void solve(){
-    /*
-    示例:
-     in:
-     1 3 3 1
-     1 1
-     4
-
-     out:
-     1 0 2 0 1
-     PS:1 4 6 4 1各个位置mod4的结果
-
-    */
     string s1,s2;
     getline(cin,s1);
     getline(cin,s2);
@@ -204,3 +192,14 @@ signed main(){
     int _=1;
     while(_--)solve();
 }
+/*
+示例:
+ in:
+ 1 3 3 1
+ 1 1
+ 4
+
+ out:
+ 1 0 2 0 1
+ PS:1 4 6 4 1各个位置mod4的结果
+*/

@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 #include<bits/extc++.h>
+#include <ext/rope>
 #define IOS std::ios::sync_with_stdio(false);std::cin.tie(nullptr);std::cout.tie(nullptr);
 #define all(x) (x).begin(),(x).end()
 #define quchong(x) (x).erase(unique(all(x)),(x).end())
@@ -26,6 +27,7 @@
 #define ui64 uint64_t
 #define ui32 uint32_t
 using namespace std;
+using namespace __gnu_cxx;
 using namespace __gnu_pbds;
 template<typename T>
 using RBTree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
@@ -81,110 +83,65 @@ const ld eps=1e-9;
 const int NN=2e6+5;
 const int SIZ=1e7;
 const LL inf=1e17;
-template <typename T>
-T inv(const T& x, const T& y) {
-    assert(x != 0);
-    T u = 0, v = 1, a = x, m = y, t;
-    while (a != 0) {
-        t = m / a;
-        swap(a, m -= t * a);
-        swap(u -= t * v, v);
-    }
-    u=(u%y+y)%y;
-    assert(m == 1);
-    return u;
-}
-LL mod;
-LL rgt=3;
-const int N=1e5;
-vector<LL> MOD{998244353,1004535809};
-LL qpow(LL a,LL t=mod-2){
-    LL res=1;
-    while(t){
-        if(t&1)res*=a,res%=mod;
-        a*=a,a%=mod;
-        t>>=1;
-    }
-    return res;
-}
-void NTT(vector<LL>& a,int n,int op){
-    static vector<int> R;
-    if(R.size()!=n){
-        R.resize(n);
-        R[0]=0;
-        for(int i=1;i<n;i++)R[i]=(i&1)*(n/2)^(R[i>>1]>>1);
-    }
-    for(int i=0;i<n;i++)if(R[i]<i)swap(a[i],a[R[i]]);
-    for(int m=2;m<=n;m<<=1){
-        int k=m>>1;
-        LL gn=qpow(rgt,(mod-1)/m);
-        for(int i=0;i<n;i+=m){
-            LL g=1;
-            for(int j=0;j<k;j++,g*=gn,g%=mod){
-                LL tmp=a[i+j+k]*g%mod;
-                a[i+j+k]=(a[i+j]-tmp+mod)%mod;
-                a[i+j]=(a[i+j]+tmp)%mod;
-            }
+string s;
+vector<int> G[NN];
+vector<vector<LL>> dp;
+/*
+ * 0:C
+ * 1:PC
+ * 2:CPC
+ * 3:CCPC
+ * 4:S
+ * 5:CS
+ * 6:CCS
+ * 7:PCCS
+ * */
+LL ans=0;
+void dfs(int x,int f){
+    if(s[x]=='C')dp[x][0]=1;
+    else if(s[x]=='S')dp[x][4]=1;
+    LL ccs=0,c=0;
+    for(int ne:G[x]){
+        if(ne==f)continue;
+        dfs(ne,x);
+        if(s[x]=='C'){
+            dp[x][2]+=dp[ne][1];
+            dp[x][3]+=dp[ne][2];
+            dp[x][5]+=dp[ne][4];
+            dp[x][6]+=dp[ne][5];
+        }else if(s[x]=='P'){
+            dp[x][1]+=dp[ne][0];
+            dp[x][7]+=dp[ne][6];
+        }
+        ans+=(s[x]=='S')*dp[ne][3];
+        ans+=(s[x]=='C')*dp[ne][7];
+        if(s[x]=='P'){
+            ans+=ccs*dp[ne][0]+c*dp[ne][6];
+            ccs+=dp[ne][6],c+=dp[ne][0];
         }
     }
-    if(op==-1){
-        reverse(a.begin()+1,a.end());
-        LL iv=qpow(n);
-        for(int i=0;i<n;i++)a[i]*=iv,a[i]%=mod;
-    }
+    ans+=dp[x][3]*dp[x][5];
+    ans+=dp[x][2]*dp[x][6];
 }
-vector<LL> operator*(vector<LL> a,vector<LL> b){
-    if(a.empty()||b.empty())return {};
-    int sz=a.size()+b.size()-1;
-    int N=1;
-    while(N<sz)N<<=1;
-    a.resize(N),b.resize(N);
-    NTT(a,N,1),NTT(b,N,1);
-    for(int i=0;i<N;i++)a[i]*=b[i],a[i]%=mod;
-    NTT(a,N,-1);
-    a.resize(sz);
-    return a;
-}
-
 void solve(){
-    int n,m,k;
-    cin>>n>>m>>k;
-    auto calc=[&](LL l)->LL{
-        LL pre=l-k;
-        LL ne=l+k;
-        LL res=0;
-        if(pre>0&&pre<=m)res+=m+1-pre;
-        if(ne>0&&ne<=m)res+=m+1-ne;
-        return res;
-    };
-    vector<int> dawd(n);
-    cin >> dawd;
-    vector<LL> A(N + 1);
-    for(int i:dawd){
-        A[i]++;
+    int n;
+    cin>>n;
+    dp.assign(n+1,vector<LL>(8,0));
+    cin>>s;s.insert(s.begin(),0);
+    for(int i=1;i<=n;i++)G[i].clear();
+    for(int i=0;i<n-1;i++){
+        int u,v;
+        cin>>u>>v;
+        G[u].emplace_back(v);
+        G[v].emplace_back(u);
     }
-    vector<LL> B=A;
-    reverse(all(A));
-    vector<LLL> ANS;
-    for(LL _v:MOD){
-        mod=_v;
-        auto res=A*B;
-        LL ans=0;
-        for(int i=1;i<=N;i++){
-            LL num=res[i+N];
-            ans+=calc(i)*num%mod;
-            ans%=mod;
-        }
-        ANS.emplace_back(ans);
-    }
-    LLL p1=MOD[0],p2=MOD[1],t1=ANS[0],t2=ANS[1];
-    LLL res=p1*inv(p1,p2)*t2+p2*inv(p2,p1)*t1;
-    res%=p1*p2;
-    LL tt=res;
-    cout<<tt;
+    ans=0;
+    dfs(1,0);
+    cout<<ans<<'\n';
 }
 signed main(){
     IOS;
-    int _=1;
+    int _;
+    cin>>_;
     while(_--)solve();
 }

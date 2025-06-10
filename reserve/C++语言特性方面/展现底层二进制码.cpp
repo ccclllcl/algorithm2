@@ -13,7 +13,7 @@
 #define pii pair<int,int>
 #define LL long long
 using namespace std;
-constexpr int NN= 3e5 + 5;
+constexpr int N= 3e5 + 5;
 const int SIZ=1e7;
 constexpr LL inf=1e12;
 template<typename T>

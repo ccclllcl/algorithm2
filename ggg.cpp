@@ -78,16 +78,16 @@ int rand(int l,int r){
     return uniform_int_distribution<int>(l, r)(rng);
 }
 const ld eps=1e-9;
-const int NN=2e6+5;
+const int N= 2e6 + 5;
 const int SIZ=1e7;
 const LL inf=1e17;
-vector<int> G[NN];
-int dep[NN],son[NN],fa[NN],siz[NN],top[NN];
+vector<int> _G[N];
+int dep[N],son[N],fa[N],siz[N],top[N];
 void dfs1(int x, int f){
     fa[x]=f;
     dep[x]=dep[f]+1;
     siz[x]=1;
-    for(int ne:G[x]){
+    for(int ne:_G[x]){
         if(ne==f)continue;
         dfs1(ne, x);
         siz[x]+=siz[ne];
@@ -97,7 +97,7 @@ void dfs1(int x, int f){
 void dfs2(int x,int tp){
     top[x]=tp;
     if(son[x])dfs2(son[x],tp);
-    for(int ne:G[x]){
+    for(int ne:_G[x]){
         if(ne==son[x]||ne==fa[x])continue;
         dfs2(ne,ne);
     }
@@ -117,8 +117,8 @@ void solve(){
     for(int i=0;i<n-1;i++){
         int u,v;
         cin>>u>>v;E.emplace_back(u,v);
-        G[u].emplace_back(v);
-        G[v].emplace_back(u);
+        _G[u].emplace_back(v);
+        _G[v].emplace_back(u);
     }
     dfs1(1,0);
     dfs2(1,1);

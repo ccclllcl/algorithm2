@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 #include<bits/extc++.h>
+#include <ext/rope>
 #define IOS std::ios::sync_with_stdio(false);std::cin.tie(nullptr);std::cout.tie(nullptr);
 #define all(x) (x).begin(),(x).end()
 #define quchong(x) (x).erase(unique(all(x)),(x).end())
@@ -26,6 +27,7 @@
 #define ui64 uint64_t
 #define ui32 uint32_t
 using namespace std;
+using namespace __gnu_cxx;
 using namespace __gnu_pbds;
 template<typename T>
 using RBTree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;

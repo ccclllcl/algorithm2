@@ -7,11 +7,11 @@ typedef long long LL;
 struct CHREQ{
     LL val,tm;
 };
-const LL NN=1e4;
+const LL N=1e4;
 int cc=0;
-LL pp[(int)NN + 1];
-LL fi[(int)NN + 1];
-bool has[(int)NN + 1];
+LL pp[(int)N + 1];
+LL fi[(int)N + 1];
+bool has[(int)N + 1];
 LL gcd(LL a,LL b){
     return b?gcd(b,a%b):a;
 }
@@ -29,9 +29,9 @@ LL qpow(LL a,LL t,LL mod){
     return res;
 }
 void init(){
-    for(int i=2; i <= NN; i++){
+    for(int i=2; i <= N; i++){
         if(!has[i]) { fi[i]=i-1;pp[cc++] = i; }
-        for(int j=0; j < cc && pp[j] * i <= NN; j++){
+        for(int j=0; j < cc && pp[j] * i <= N; j++){
             has[pp[j] * i]=true;
             fi[pp[j] * i]= fi[i] * (pp[j] - 1);
             if(i % pp[j] == 0){

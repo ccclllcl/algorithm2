@@ -79,25 +79,29 @@ LL rand(LL l,LL r){
     static mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
     return uniform_int_distribution<LL>(l, r)(rng);
 }
+ld Rand(ld l,ld r){
+    static mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
+    return uniform_real_distribution<ld>(l,r)(rng);
+}
 const ld eps=1e-9;
-const int NN=2e6+5;
+const int N= 2e6 + 5;
 const int SIZ=1e7;
 const LL inf=1e17;
+void get_tr(int n){
+    vector<int> f(n+1);
+    for(int i=2;i<=n;i++)f[i]=rand(1,i-1);
+    for(int i=2;i<=n;i++){
+        cout<<i<<' '<<f[i]<<'\n';
+    }
+}
 signed main(){
-    IOS;
     freopen("../in.txt","w",stdout);
-    cout<<1<<'\n';
-    LL n=5e5;
-    const int N=2e5;
+    int n=250000;
     cout<<n<<'\n';
-//    vector<int> res{0,0};
-//    for(int i=1;i<=n;i++){
-//        int k=0;
-//        while(res.size()<n&&k<=i)res.emplace_back(k++);
-//        if(res.size()==n)break;
-//    }
-    vector<int> res(n);
-    iota(all(res),1);
-    //shuffle(all(res), std::mt19937(std::random_device()()));
-    cout<<res;
+    for(int i=0;i<n;i++){
+        cout<<rand(1,1e9)<<' ';
+    }
+    cout<<'\n';
+    get_tr(n);
+    get_tr(n);
 }
