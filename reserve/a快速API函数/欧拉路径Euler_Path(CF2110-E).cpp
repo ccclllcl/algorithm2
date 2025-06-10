@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 #include<bits/extc++.h>
+#include <ext/rope>
 #define IOS std::ios::sync_with_stdio(false);std::cin.tie(nullptr);std::cout.tie(nullptr);
 #define all(x) (x).begin(),(x).end()
 #define quchong(x) (x).erase(unique(all(x)),(x).end())
@@ -26,6 +27,7 @@
 #define ui64 uint64_t
 #define ui32 uint32_t
 using namespace std;
+using namespace __gnu_cxx;
 using namespace __gnu_pbds;
 template<typename T>
 using RBTree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
@@ -78,84 +80,101 @@ int rand(int l,int r){
     return uniform_int_distribution<int>(l, r)(rng);
 }
 const ld eps=1e-9;
-const int N= 2e6 + 5;
+const int NN=2e6+5;
 const int SIZ=1e7;
 const LL inf=1e17;
-vector<int> _G[N];
-int dep[N],son[N],fa[N],siz[N],top[N];
-void dfs1(int x, int f){
-    fa[x]=f;
-    dep[x]=dep[f]+1;
-    siz[x]=1;
-    for(int ne:_G[x]){
-        if(ne==f)continue;
-        dfs1(ne, x);
-        siz[x]+=siz[ne];
-        if(siz[ne]>siz[son[x]])son[x]=ne;
-    }
-}
-void dfs2(int x,int tp){
-    top[x]=tp;
-    if(son[x])dfs2(son[x],tp);
-    for(int ne:_G[x]){
-        if(ne==son[x]||ne==fa[x])continue;
-        dfs2(ne,ne);
-    }
-}
-int lca(int x,int y){
-    while(top[x]!=top[y]){
-        if(dep[top[x]]<dep[top[y]])swap(x,y);
-        x=fa[top[x]];
-    }
-    return dep[x]<dep[y]?x:y;
-}
-const int N=57;
 void solve(){
     int n;
     cin>>n;
+    map<int,int> H,L;
+    vector<vector<pii>> G;
     vector<pii> E;
-    for(int i=0;i<n-1;i++){
-        int u,v;
-        cin>>u>>v;E.emplace_back(u,v);
-        _G[u].emplace_back(v);
-        _G[v].emplace_back(u);
+    while(n--){
+        int a,b;
+        cin>>a>>b;
+        H[a]=1,L[b]=1;
+        E.emplace_back(a,b);
     }
-    dfs1(1,0);
-    dfs2(1,1);
-    vector<LL> d(n-1);
-    cin>>d;
-    d.insert(d.begin(),0);
-    vector<LL> dp(n+1,0);
-    vector<int> pre(n+1,0);
-    for(int b=0;b<N;b++){
-        for(int i=1;i<n;i++){
-            if(d[i]%2){
-                pre[i+1]=pre[i]^1;
-            }else pre[i+1]=pre[i];
-            if(pre[i+1])dp[i+1]|=(1ll<<b);
-        }
-        for(int i=1;i<n;i++){
-            d[i]-=pre[i]+pre[i+1]-2*pre[lca(i,i+1)];
-            if(d[i]<0||d[i]%2==1){
-                cout<<-1;
-                return;
-            }
-            d[i]>>=1;
-        }
-    }
-    vector<LL> ans;
+    n=0;int m=0;
+    for(auto& [l,r]:H)r=++m;
+    for(auto& [l,r]:L)r=m+(++n);
+    G.resize(n+m+1);
+    vector<int> du(n+m+1);
+    vector<int> fa(n+m+1);iota(all(fa),0);
+    auto find=[&](int x)->int{
+        while(x!=fa[x])x=fa[x]=fa[fa[x]];
+        return x;
+    };
+    auto merge=[&](int x,int y)->void{
+        x=find(x),y=find(y);
+        if(x==y)return;
+        fa[x]=y;
+    };
     for(auto [l,r]:E){
-        if(fa[r]==l)swap(l,r);
-        ans.emplace_back(dp[l]-dp[r]);
-        if(ans.back()<=0){
-            cout<<-1;
+        l=H[l],r=L[r];
+        merge(l,r);
+        du[l]++,du[r]++;
+        G[l].emplace_back(r,G[r].size());
+        G[r].emplace_back(l,G[l].size()-1);
+    }
+    for(int i=1;i<=n+m;i++){
+        if(find(i)!=find(1)){
+            cout<<"NO\n";
             return;
         }
     }
-    for(LL v:ans)cout<<v<<'\n';
+    int s=-1;
+    int cc=0;
+    for(int i=1;i<=n+m;i++){
+        if(du[i]&1){
+            cc++;
+            s=i;
+            if(cc>2){
+                cout<<"NO\n";
+                return;
+            }
+        }
+    }
+    cout<<"YES\n";
+    vector<vector<bool>> del(n + m + 1);
+    for(int i=0;i<G.size();i++)del[i].resize(G[i].size());
+    vector<int> ans;
+    vector<int> cnt(n+m+1);
+    function<void(int)> Hierholzer=[&](int x)->void{
+        for(int& i=cnt[x];i<G[x].size();){
+            if(!del[x][i]){
+                auto [ne,id]=G[x][i];
+                del[ne][id]=true;
+                del[x][i]=true;
+                i++;
+                Hierholzer(ne);
+            }else ++i;
+        }
+        ans.emplace_back(x);
+    };
+    if(s==-1)s=1;
+    Hierholzer(s);
+    int la=ans.back();
+    ans.pop_back();
+    vector<int> ANS;
+    map<pii,vector<int>> M;
+    for(int i=0;i<E.size();i++){
+        auto [l,r]=E[i];
+        l=H[l],r=L[r];
+        M[{l,r}].emplace_back(i+1);
+    }
+    while(!ans.empty()){
+        int now=ans.back();ans.pop_back();
+        int x=now<=m?now:la,y=now^la^x;
+        ANS.emplace_back(M[{x,y}].back());
+        M[{x,y}].pop_back();
+        la=now;
+    }
+    cout<<ANS<<'\n';
 }
 signed main(){
     IOS;
-    int _=1;
+    int _;
+    cin>>_;
     while(_--)solve();
 }

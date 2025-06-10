@@ -81,29 +81,29 @@ const ld eps=1e-9;
 const int NN=2e6+5;
 const int SIZ=1e7;
 const LL inf=1e17;
-LL mod=998244353;
+LL MOD=998244353;
 LL qpow(LL a,LL t){
     LL res=1;
     while(t){
-        if(t&1)res*=a,res%=mod;
-        a*=a,a%=mod;
+        if(t&1)res*=a,res%=MOD;
+        a*=a,a%=MOD;
         t>>=1;
     }
     return res;
 }
-LL fac[NN],inv[NN];
-LL q2[NN];
+LL fac[N],inv[N];
+LL q2[N];
 void init(){
     fac[0]=1;
     q2[0]=1;
-    for(int i=1;i<NN;i++)q2[i]=q2[i-1]*2%mod;
-    for(int i=1;i<NN;i++)fac[i]=fac[i-1]*i%mod;
-    inv[NN-1]=qpow(fac[NN-1],mod-2);
-    for(int i=NN-2;~i;i--)inv[i]=inv[i+1]*(i+1)%mod;
+    for(int i=1; i < N; i++)q2[i]= q2[i - 1] * 2 % MOD;
+    for(int i=1; i < N; i++)fac[i]= fac[i - 1] * i % MOD;
+    inv[N - 1]=qpow(fac[N - 1], MOD - 2);
+    for(int i= N - 2; ~i; i--)inv[i]= inv[i + 1] * (i + 1) % MOD;
 }
 LL C(LL m,LL n){
     if(m<n)return 0ll;
-    return fac[m]*inv[n]%mod*inv[m-n]%mod;
+    return fac[m] * inv[n] % MOD * inv[m - n] % MOD;
 }
 void solve(){
     LL ans=0;
@@ -114,10 +114,10 @@ void solve(){
         return;
     }
     for(int d=1;d<m;d++){
-        ans+=(C(m-1,n-2)-C(d-1,n-2))%mod*q2[n-3]%mod;
-        ans%=mod;
+        ans+= (C(m-1,n-2)-C(d-1,n-2)) % MOD * q2[n - 3] % MOD;
+        ans%=MOD;
     }
-    if(ans<0)ans+=mod;
+    if(ans<0)ans+=MOD;
     cout<<ans;
 }
 signed main(){

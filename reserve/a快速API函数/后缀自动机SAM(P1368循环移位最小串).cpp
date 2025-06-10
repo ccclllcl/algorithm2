@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 #include<bits/extc++.h>
+#include <ext/rope>
 #define IOS std::ios::sync_with_stdio(false);std::cin.tie(nullptr);std::cout.tie(nullptr);
 #define all(x) (x).begin(),(x).end()
 #define quchong(x) (x).erase(unique(all(x)),(x).end())
@@ -26,6 +27,7 @@
 #define ui64 uint64_t
 #define ui32 uint32_t
 using namespace std;
+using namespace __gnu_cxx;
 using namespace __gnu_pbds;
 template<typename T>
 using RBTree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
@@ -78,84 +80,66 @@ int rand(int l,int r){
     return uniform_int_distribution<int>(l, r)(rng);
 }
 const ld eps=1e-9;
-const int N= 2e6 + 5;
+const int NN=2e6+5;
 const int SIZ=1e7;
 const LL inf=1e17;
-vector<int> _G[N];
-int dep[N],son[N],fa[N],siz[N],top[N];
-void dfs1(int x, int f){
-    fa[x]=f;
-    dep[x]=dep[f]+1;
-    siz[x]=1;
-    for(int ne:_G[x]){
-        if(ne==f)continue;
-        dfs1(ne, x);
-        siz[x]+=siz[ne];
-        if(siz[ne]>siz[son[x]])son[x]=ne;
-    }
+struct state{
+    int len{},link{};
+    std::map<int,int> next;
+};
+state st[NN*2];
+int sz=0,last=0;
+void sam_init(){
+    st[0].len=0;
+    st[0].link=-1;
+    last=0;
 }
-void dfs2(int x,int tp){
-    top[x]=tp;
-    if(son[x])dfs2(son[x],tp);
-    for(int ne:_G[x]){
-        if(ne==son[x]||ne==fa[x])continue;
-        dfs2(ne,ne);
+LL ans=0;
+void sam_extend(int c){
+    int cur = ++sz;
+    st[cur].len=st[last].len+1;
+    int p=last;
+    while(p!=-1&&!st[p].next.count(c)){
+        st[p].next[c]=cur;
+        p=st[p].link;
     }
-}
-int lca(int x,int y){
-    while(top[x]!=top[y]){
-        if(dep[top[x]]<dep[top[y]])swap(x,y);
-        x=fa[top[x]];
-    }
-    return dep[x]<dep[y]?x:y;
-}
-const int N=57;
-void solve(){
-    int n;
-    cin>>n;
-    vector<pii> E;
-    for(int i=0;i<n-1;i++){
-        int u,v;
-        cin>>u>>v;E.emplace_back(u,v);
-        _G[u].emplace_back(v);
-        _G[v].emplace_back(u);
-    }
-    dfs1(1,0);
-    dfs2(1,1);
-    vector<LL> d(n-1);
-    cin>>d;
-    d.insert(d.begin(),0);
-    vector<LL> dp(n+1,0);
-    vector<int> pre(n+1,0);
-    for(int b=0;b<N;b++){
-        for(int i=1;i<n;i++){
-            if(d[i]%2){
-                pre[i+1]=pre[i]^1;
-            }else pre[i+1]=pre[i];
-            if(pre[i+1])dp[i+1]|=(1ll<<b);
-        }
-        for(int i=1;i<n;i++){
-            d[i]-=pre[i]+pre[i+1]-2*pre[lca(i,i+1)];
-            if(d[i]<0||d[i]%2==1){
-                cout<<-1;
-                return;
+    if(p==-1){
+        st[cur].link=0;
+    }else{
+        int q=st[p].next[c];
+        if(st[p].len+1==st[q].len){
+            st[cur].link=q;
+        }else{
+            int clone=++sz;
+            st[clone].len=st[p].len+1;
+            st[clone].next=st[q].next;
+            st[clone].link=st[q].link;
+            while(p!=-1&&st[p].next[c]==q){
+                st[p].next[c]=clone;
+                p=st[p].link;
             }
-            d[i]>>=1;
+            st[q].link=st[cur].link=clone;
         }
     }
-    vector<LL> ans;
-    for(auto [l,r]:E){
-        if(fa[r]==l)swap(l,r);
-        ans.emplace_back(dp[l]-dp[r]);
-        if(ans.back()<=0){
-            cout<<-1;
-            return;
-        }
-    }
-    for(LL v:ans)cout<<v<<'\n';
+    last=cur;
+    ans+=st[cur].len-st[st[cur].link].len;
+}
+vector<int> res;
+int n;
+void dfs(int x){
+    if(res.size()==n)return;
+    auto it=st[x].next.begin();
+    res.emplace_back(it->first);
+    dfs(it->second);
 }
 signed main(){
     IOS;
-    int _=1;
-    while(_--)solve();
+    cin>>n;
+    vector<int> A(n);
+    cin>>A;
+    A.insert(A.end(),all(A));
+    sam_init();
+    for(int i:A)sam_extend(i);
+    dfs(0);
+    cout<<res;
 }

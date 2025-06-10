@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 #include<bits/extc++.h>
+#include <ext/rope>
 #define IOS std::ios::sync_with_stdio(false);std::cin.tie(nullptr);std::cout.tie(nullptr);
 #define all(x) (x).begin(),(x).end()
 #define quchong(x) (x).erase(unique(all(x)),(x).end())
@@ -26,6 +27,7 @@
 #define ui64 uint64_t
 #define ui32 uint32_t
 using namespace std;
+using namespace __gnu_cxx;
 using namespace __gnu_pbds;
 template<typename T>
 using RBTree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
@@ -78,148 +80,42 @@ int rand(int l,int r){
     return uniform_int_distribution<int>(l, r)(rng);
 }
 const ld eps=1e-9;
-const int NN=4e5+5;
+const int NN=2e6+5;
 const int SIZ=1e7;
 const LL inf=1e17;
-set<int> G[NN];
-int cc=0,n=0;
-int fa[NN],son[NN],siz[NN],dep[NN],top[NN],dfn[NN],idfn[NN],col[NN],ff[NN];
-void dfs1(int x,int f){
-    dep[x]=dep[f]+1;
-    col[x]=dep[x]%2;
-    fa[x]=f;
-    siz[x]=1;
-    son[x]=0;
-    if(G[x].size()>1&&col[x]==0){
-        for(int ne:G[x])ff[ne]=1;
-    }
-    for(int ne:G[x]){
-        dfs1(ne,x);
-        siz[x]+=siz[ne];
-        if(siz[ne]>siz[son[x]])son[x]=ne;
-    }
-}
-void dfs2(int x,int tp){
-    top[x]=tp;
-    dfn[x]=++cc;
-    idfn[cc]=x;
-    if(son[x])dfs2(son[x],tp);
-    for(int ne:G[x]){
-        if(ne==son[x])continue;
-        dfs2(ne,ne);
-    }
-}
-pll tr[NN*4];
-LL tag[NN*4];
-pll operator+(pll a,pll b){
-    if(!a.first)return b;
-    if(!b.first)return a;
-    return a.second<b.second?a:b;
-}
-void cov(int u,LL v){
-    tag[u]+=v;
-    tr[u].second-=v;
-}
-void down(int u){
-    if(tag[u]){
-        cov(ls,tag[u]);
-        cov(rs,tag[u]);
-        tag[u]=0;
-    }
-}
-void build(int u,int l,int r){
-    if(l==r){
-        int x=idfn[l];
-        if(ff[x]){
-            tr[u]={x,siz[x]};
-        }
-        return;
-    }
-    build(ls,l,mid);
-    build(rs,mid+1,r);
-    tr[u]=tr[ls]+tr[rs];
-}
-void decrease(int u,int l,int r,int L,int R,LL v){
-    if(L<=l&&R>=r){
-        cov(u,v);
-        return;
-    }
-    down(u);
-    if(L<=mid)decrease(ls,l,mid,L,R,v);
-    if(R>mid)decrease(rs,mid+1,r,L,R,v);
-    tr[u]=tr[ls]+tr[rs];
-}
-void change(int u,int l,int r,int p){
-    if(l==r){
-        ff[idfn[l]]=0;
-        tr[u]={0,0};
-        return;
-    }
-    down(u);
-    p<=mid?change(ls,l,mid,p):change(rs,mid+1,r,p);
-    tr[u]=tr[ls]+tr[rs];
-}
-void dele(int x,LL v){
-    if(x==1)return;
-    G[fa[x]].erase(x);
-    change(1,1,n,dfn[x]);
-    if(G[fa[x]].size()==1){
-        int p=*G[fa[x]].begin();
-        change(1,1,n,dfn[p]);
-    }
-    while(x){
-        decrease(1,1,n,dfn[top[x]],dfn[x],v);
-        x=fa[top[x]];
-    }
-}
+vector<int> G[NN];
+LL ans[NN];
 void solve(){
+    int n;
     cin>>n;
-    G[1].insert(2);
-    for(int i=2;i<=n;i++){
-        int f;
-        cin>>f;
-        G[f+1].insert(i+1);
+    for(int i=0;i<n-1;i++){
+        int u,v;
+        cin>>u>>v;
+        G[u].emplace_back(v);
+        G[v].emplace_back(u);
     }
-    n++;
-    dfs1(1,0);
-    dfs2(1,1);
-    ff[1]=1;
-    build(1,1,n);
-    vector<LL> D;
-    for(int i=1;i<=n;i++){
-        if(col[i]==0&&G[i].empty()){
-            dele(i,1);
-            D.emplace_back(1);
-        }
-    }
-    while(1){
-        auto [x,v]=tr[1];
-        D.emplace_back(v+1);
-        if(x==1)break;
-        dele(x,v);
-    }
-    sort(all(D));
-    reverse(all(D));
-    int now=0;
-    LL has=0;
-    while(!D.empty()){
-        LL v=D.back();
-        D.pop_back();
-        if(v==1){
-            if(now==0)has++;
-        }else{
-            v--;
-            if(now!=0){
-                has+=v/2;
+    for(int s=1;s<=n;s++){
+        queue<pii> q;
+        q.emplace(s,0);
+        vector<bool> has(n+1);
+        has[s]=true;
+        LL tot=0;
+        LL td=0;
+        while(!q.empty()){
+            auto [x,d]=q.front();q.pop();
+            tot++;
+            td+=d;
+            chmax(ans[tot],(n-1)*tot-2*td);
+            for(int ne:G[x]){
+                if(has[ne])continue;
+                has[ne]=true;
+                q.emplace(ne,d+1);
             }
         }
-        now^=1;
     }
-    LL blue=0;
-    for(int i=2;i<=n;i++)if(col[i])blue++;
-    LL tot=(n)/2;
-    LL de=blue-(tot-has);
-    cout<<de+has;
+    for(int i=0;i<=n;i++){
+        cout<<ans[i]<<' ';
+    }
 }
 signed main(){
     IOS;

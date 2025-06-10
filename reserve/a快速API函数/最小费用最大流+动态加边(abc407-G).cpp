@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 #include<bits/extc++.h>
+#include <ext/rope>
 #define IOS std::ios::sync_with_stdio(false);std::cin.tie(nullptr);std::cout.tie(nullptr);
 #define all(x) (x).begin(),(x).end()
 #define quchong(x) (x).erase(unique(all(x)),(x).end())
@@ -26,6 +27,7 @@
 #define ui64 uint64_t
 #define ui32 uint32_t
 using namespace std;
+using namespace __gnu_cxx;
 using namespace __gnu_pbds;
 template<typename T>
 using RBTree = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
@@ -78,81 +80,101 @@ int rand(int l,int r){
     return uniform_int_distribution<int>(l, r)(rng);
 }
 const ld eps=1e-9;
-const int N= 2e6 + 5;
+const int NN=2e6+5;
 const int SIZ=1e7;
 const LL inf=1e17;
-vector<int> _G[N];
-int dep[N],son[N],fa[N],siz[N],top[N];
-void dfs1(int x, int f){
-    fa[x]=f;
-    dep[x]=dep[f]+1;
-    siz[x]=1;
-    for(int ne:_G[x]){
-        if(ne==f)continue;
-        dfs1(ne, x);
-        siz[x]+=siz[ne];
-        if(siz[ne]>siz[son[x]])son[x]=ne;
-    }
+struct edge{
+    int v;
+    LL c,w;
+    int ne;
+};
+edge E[NN];
+int idx=1;
+int tot;
+LL d[NN];
+int h[NN],cur[NN],pre[NN],vis[NN];
+LL mf[NN];
+void add(int u,int v,LL c,LL w){
+    E[++idx]={v,c,w,h[u]};
+    h[u]=idx;
+    E[++idx]={u,0,-w,h[v]};
+    h[v]=idx;
 }
-void dfs2(int x,int tp){
-    top[x]=tp;
-    if(son[x])dfs2(son[x],tp);
-    for(int ne:_G[x]){
-        if(ne==son[x]||ne==fa[x])continue;
-        dfs2(ne,ne);
-    }
-}
-int lca(int x,int y){
-    while(top[x]!=top[y]){
-        if(dep[top[x]]<dep[top[y]])swap(x,y);
-        x=fa[top[x]];
-    }
-    return dep[x]<dep[y]?x:y;
-}
-const int N=57;
-void solve(){
-    int n;
-    cin>>n;
-    vector<pii> E;
-    for(int i=0;i<n-1;i++){
-        int u,v;
-        cin>>u>>v;E.emplace_back(u,v);
-        _G[u].emplace_back(v);
-        _G[v].emplace_back(u);
-    }
-    dfs1(1,0);
-    dfs2(1,1);
-    vector<LL> d(n-1);
-    cin>>d;
-    d.insert(d.begin(),0);
-    vector<LL> dp(n+1,0);
-    vector<int> pre(n+1,0);
-    for(int b=0;b<N;b++){
-        for(int i=1;i<n;i++){
-            if(d[i]%2){
-                pre[i+1]=pre[i]^1;
-            }else pre[i+1]=pre[i];
-            if(pre[i+1])dp[i+1]|=(1ll<<b);
-        }
-        for(int i=1;i<n;i++){
-            d[i]-=pre[i]+pre[i+1]-2*pre[lca(i,i+1)];
-            if(d[i]<0||d[i]%2==1){
-                cout<<-1;
-                return;
+bool spfa(int s,int t){
+    fill(d,d+tot+1,inf);
+    fill(mf,mf+tot+1,0);
+    d[s]=0;
+    queue<int> q;q.push(s);
+    vis[s]=1;
+    mf[s]=inf;
+    while(!q.empty()){
+        int u=q.front();q.pop();vis[u]=0;
+        for(int i=h[u];i;i=E[i].ne){
+            int v=E[i].v;
+            LL c=E[i].c;
+            LL w=E[i].w;
+            if(d[v]>d[u]+w&&c>0){
+                d[v]=d[u]+w;
+                mf[v]=min(mf[u],c);
+                pre[v]=i;
+                if(!vis[v])vis[v]=1,q.push(v);
             }
-            d[i]>>=1;
         }
     }
-    vector<LL> ans;
-    for(auto [l,r]:E){
-        if(fa[r]==l)swap(l,r);
-        ans.emplace_back(dp[l]-dp[r]);
-        if(ans.back()<=0){
-            cout<<-1;
-            return;
+    return mf[t]>0;
+}
+pll EK(int s,int t){
+    LL flow=0,cost=0;
+    while(spfa(s,t)){
+        for(int v=t;v!=s;){
+            int i=pre[v];
+            E[i].c-=mf[t];
+            E[i^1].c+=mf[t];
+            v=E[i^1].v;
         }
+        flow+=mf[t];
+        cost+=mf[t]*d[t];
     }
-    for(LL v:ans)cout<<v<<'\n';
+    return {flow,cost};
+}
+const LL offset=3e12;
+void solve(){
+    int m,n;
+    cin>>m>>n;
+    vector<vector<LL>> mat(m,vector<LL>(n));
+    cin>>mat;
+    LL SS=0;
+    int s=m*n+1,t=m*n+2;
+    for(int i=0;i<m;i++)for(int j=0;j<n;j++){
+            SS+=mat[i][j];
+            int id=i*n+j+1;
+            if((i+j)%2)add(s,id,1,0);
+            else add(id,t,1,0);
+            if(i+1<m){
+                int nid=(i+1)*n+j+1;
+                if((i+j)%2)add(id,nid,1,mat[i][j]+mat[i+1][j]+offset);
+                else add(nid,id,1,mat[i][j]+mat[i+1][j]+offset);
+            }
+            if(j+1<n){
+                int nid=i*n+j+2;
+                if((i+j)%2)add(id,nid,1,mat[i][j]+mat[i][j+1]+offset);
+                else add(nid,id,1,mat[i][j]+mat[i][j+1]+offset);
+            }
+        }
+    int S=t+1;
+    tot=S;
+    LL ans=0;
+    LL F=0,CC=0;
+    while(1){
+        add(S,s,1,0);
+        auto [flow,cost]=EK(S,t);
+        if(!flow)break;
+        F+=flow;
+        CC+=cost;
+        chmin(ans,CC-F*offset);
+    }
+    ans=SS-ans;
+    cout<<ans;
 }
 signed main(){
     IOS;

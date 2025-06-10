@@ -21,7 +21,7 @@ int siz[N];
 LL ans1[N],ans2[N];
 int nos[N],enos[N];
 constexpr LL inf=1e12;
-void dfs1(int x, int f){
+void dfs(int x, int f){
     int c=A[x],k=cnt[c];
     int ff=0,pos=0;
     siz[x]=1;
