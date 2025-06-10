@@ -283,7 +283,7 @@ vector<LL> polyln(vector<LL> a){  //返回f(a).size()与a.size()相同,且ln(a)=
     return dd;
 }
 //多项式exp
-vector<LL> polyexp(vector<LL> a){//返回e^(a),与a次数相同的部分,例a=1+x,res=1+x+x^2/2+x^3/6+x^4/24+...
+vector<LL> polyexp(vector<LL> a){//返回e^(a),与a次数相同的部分,例a=x,res=1+x+x^2/2+x^3/6+x^4/24+...
     if(a.empty()||a.size()==1&&a[0]==0)return {1};
     assert(a[0]==0);
     const int N=a.size();
